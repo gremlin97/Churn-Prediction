@@ -1,0 +1,30 @@
+import pyspark
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.appName('Churn').getOrCreate()
+df = read_dataframe('data/train.csv')
+
+print('# Show dataset top 5 rows')
+df.show(5)
+print('#Check type of dataframe')
+print(type(df)) 
+print('# Get top 2 records (Return: List format)')
+df.head(2) 
+print('# Get Bottom 2 records')
+df.tail(2) 
+print('#Check datatypes of columns')
+df.printSchema() 
+print('#Check columns in the dataset')
+df.columns 
+print('# Select and show a single column')
+df.select('CreditScore').show(5)
+print('# Select and show multiple columns')
+df.select(['Gender','Age','Tenure']).show(5)
+print('#Check datatypes with dtypes')
+print(df.dtypes) 
+print('# Get dataset statistics')
+stats = df.describe()
+stats = stats.toPandas()
+print('# Converted stats dataframe to pandas dataframe to display it better')
+print(type(stats)) 
+print(stats)
