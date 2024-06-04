@@ -18,7 +18,6 @@ def train_test_split(df: pyspark.sql.dataframe.DataFrame) ->  tuple:
     return train, test
 
 def train_model(train: pyspark.sql.dataframe.DataFrame, params) -> pyspark.ml.classification.GBTClassificationModel:
-
     gbt = GBTClassifier(featuresCol='IndependentFeatures', labelCol='Churned', **params)
     gbt = gbt.fit(train)
     return gbt
@@ -44,9 +43,10 @@ if __name__ == '__main__':
         df = read_dataframe('data/train.csv')
         df = preprocess_df(df)
         train, test = train_test_split(df)
+        test.write.parquet('./data/test')
         params = {'maxIter' : mxiter, 'maxDepth' : mxdepth, 'stepSize' : stepsz, 'seed' : seed}
         mlflow.log_params(params)
         model = train_model(train, params)
         roc = prediction(test, model)
         mlflow.spark.log_model(model,'Churn Predictor')
-        mlflow.log_metric('Area under the ROC curve', roc)
+        mlflow.log_metric('test_roc', roc)
