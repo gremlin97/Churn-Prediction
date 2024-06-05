@@ -4,6 +4,7 @@ import pandas as pd
 import sys
 import pyspark
 from pyspark.sql import SparkSession
+from pyspark.ml import PipelineModel
 
 sys.path.append('../')
 
@@ -19,8 +20,11 @@ spark = SparkSession.builder.appName('Churn').getOrCreate()
 
 class Churner:
     def __init__(self) -> None:
-        self.logged_model = 'runs:/661036cb6f9648b3a1d75e0540948042/best_model'
-        self.model =  mlflow.spark.load_model(self.logged_model)
+        self.model_path = '/workspaces/Churn-Prediction/models/gbt'
+        self.model = PipelineModel.load(self.model_path)
+        # self.logged_model = 'runs:/661036cb6f9648b3a1d75e0540948042/best_model'
+        # self.model =  mlflow.spark.load_model(self.logged_model)
+        # self.model.write().overwrite().save('/workspaces/Churn-Prediction/models/gbt')
         #self.infer_pipe = mlflow.spark.load_model('/workspaces/Churn-Prediction/pipeline/inference_pipe')
 
     @bentoml.api
@@ -40,10 +44,6 @@ class Churner:
         print('Result is:', result, type(result))
         result = result.toPandas()
         return result
-        # if predicted_value == 0:
-        #     return 'No'
-        # else:
-        #     return 'Yes'
 
 
 
