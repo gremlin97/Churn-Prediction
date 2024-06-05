@@ -12,8 +12,8 @@ import numpy as np
 TRAIN_EXPERIMENT = 'Churn Prediction'
 OPT_EXPERIMENT = 'Hyperparam Optimization'
 mlflow.autolog()
-# Start server: #mlflow server --backend-store-uri sqlite:///backend.db --default-artifact-root ./mlruns
-mlflow.set_tracking_uri('http://127.0.0.1:5000')
+# Start server: #mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlruns
+
 mlflow.set_experiment(TRAIN_EXPERIMENT)
 
 def load_model(logged_model) -> pyspark.ml.classification.GBTClassificationModel:
@@ -22,11 +22,13 @@ def load_model(logged_model) -> pyspark.ml.classification.GBTClassificationModel
 
 def grid_search(df_path: str) -> pyspark.ml.classification.GBTClassificationModel:
     # Model instantiation
-    gbt = GBTClassifier()
+    gbt = GBTClassifier(featuresCol='IndependentFeatures', labelCol='Churned')
     # Param Grid
-    grid = tune.ParamGridBuilder(gbt.maxIter, np.arrange(1,10,1))
-    grid = tune.ParamGridBuilder(gbt.maxDepth, np.arrange(2,6,1))
-    grid = tune.ParamGridBuilder(gbt.stepSize, np.arrange(0.01,0.3,0.01))
+    grid = tune.ParamGridBuilder()
+    # Add Params
+    grid = grid.addGrid(gbt.maxIter, np.arange(1,10,1))
+    grid = grid.addGrid(gbt.maxDepth, np.arange(2,5,1))
+    grid = grid.addGrid(gbt.stepSize, np.arange(0.1,0.3,0.1))
     # Adding Hyperparams
     grid = grid.build()
     # Evaluator
@@ -34,7 +36,7 @@ def grid_search(df_path: str) -> pyspark.ml.classification.GBTClassificationMode
     # Cross-Validation
     cv = tune.CrossValidator(estimator=gbt, estimatorParamMaps=grid, evaluator=evaluator)
     opt_model = cv.fit(test)
-    return model
+    return opt_model
 
 def retrieve_runs(top_n: int) -> str:
     client = MlflowClient()
@@ -50,6 +52,7 @@ if __name__ == '__main__':
     with mlflow.start_run():
         model = grid_search(test)
         model_uri = retrieve_runs(5)
+        # Steps: Staging -> Production -> Archived
         mlflow.register_model(model_uri = model_uri, name=OPT_EXPERIMENT)
 
 

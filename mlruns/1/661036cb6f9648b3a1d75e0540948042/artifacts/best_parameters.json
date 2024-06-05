@@ -1,0 +1,5 @@
+{
+  "GBTClassifier.maxIter": 9,
+  "GBTClassifier.maxDepth": 4,
+  "GBTClassifier.stepSize": 0.2
+}
