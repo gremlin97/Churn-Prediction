@@ -48,6 +48,7 @@ def retrieve_runs(top_n: int) -> str:
     return model_uri
 
 if __name__ == '__main__':
+    # To-Do: Add test validation and change grid-search to train. Low compute has necessitated this
     test = spark.read.parquet('./data/test')
     with mlflow.start_run():
         model = grid_search(test)

@@ -1,0 +1,309 @@
+{
+  "hierarchy": {
+    "name": "CrossValidator",
+    "evaluator": {
+      "name": "BinaryClassificationEvaluator"
+    },
+    "tuned_estimator": {
+      "name": "GBTClassifier"
+    }
+  },
+  "CrossValidator": {
+    "tuning_parameter_map_list": [
+      {
+        "GBTClassifier.maxIter": 1,
+        "GBTClassifier.maxDepth": 2,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 1,
+        "GBTClassifier.maxDepth": 2,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 1,
+        "GBTClassifier.maxDepth": 3,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 1,
+        "GBTClassifier.maxDepth": 3,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 1,
+        "GBTClassifier.maxDepth": 4,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 1,
+        "GBTClassifier.maxDepth": 4,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 2,
+        "GBTClassifier.maxDepth": 2,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 2,
+        "GBTClassifier.maxDepth": 2,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 2,
+        "GBTClassifier.maxDepth": 3,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 2,
+        "GBTClassifier.maxDepth": 3,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 2,
+        "GBTClassifier.maxDepth": 4,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 2,
+        "GBTClassifier.maxDepth": 4,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 3,
+        "GBTClassifier.maxDepth": 2,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 3,
+        "GBTClassifier.maxDepth": 2,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 3,
+        "GBTClassifier.maxDepth": 3,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 3,
+        "GBTClassifier.maxDepth": 3,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 3,
+        "GBTClassifier.maxDepth": 4,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 3,
+        "GBTClassifier.maxDepth": 4,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 4,
+        "GBTClassifier.maxDepth": 2,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 4,
+        "GBTClassifier.maxDepth": 2,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 4,
+        "GBTClassifier.maxDepth": 3,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 4,
+        "GBTClassifier.maxDepth": 3,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 4,
+        "GBTClassifier.maxDepth": 4,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 4,
+        "GBTClassifier.maxDepth": 4,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 5,
+        "GBTClassifier.maxDepth": 2,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 5,
+        "GBTClassifier.maxDepth": 2,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 5,
+        "GBTClassifier.maxDepth": 3,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 5,
+        "GBTClassifier.maxDepth": 3,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 5,
+        "GBTClassifier.maxDepth": 4,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 5,
+        "GBTClassifier.maxDepth": 4,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 6,
+        "GBTClassifier.maxDepth": 2,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 6,
+        "GBTClassifier.maxDepth": 2,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 6,
+        "GBTClassifier.maxDepth": 3,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 6,
+        "GBTClassifier.maxDepth": 3,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 6,
+        "GBTClassifier.maxDepth": 4,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 6,
+        "GBTClassifier.maxDepth": 4,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 7,
+        "GBTClassifier.maxDepth": 2,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 7,
+        "GBTClassifier.maxDepth": 2,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 7,
+        "GBTClassifier.maxDepth": 3,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 7,
+        "GBTClassifier.maxDepth": 3,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 7,
+        "GBTClassifier.maxDepth": 4,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 7,
+        "GBTClassifier.maxDepth": 4,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 8,
+        "GBTClassifier.maxDepth": 2,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 8,
+        "GBTClassifier.maxDepth": 2,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 8,
+        "GBTClassifier.maxDepth": 3,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 8,
+        "GBTClassifier.maxDepth": 3,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 8,
+        "GBTClassifier.maxDepth": 4,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 8,
+        "GBTClassifier.maxDepth": 4,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 9,
+        "GBTClassifier.maxDepth": 2,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 9,
+        "GBTClassifier.maxDepth": 2,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 9,
+        "GBTClassifier.maxDepth": 3,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 9,
+        "GBTClassifier.maxDepth": 3,
+        "GBTClassifier.stepSize": 0.2
+      },
+      {
+        "GBTClassifier.maxIter": 9,
+        "GBTClassifier.maxDepth": 4,
+        "GBTClassifier.stepSize": 0.1
+      },
+      {
+        "GBTClassifier.maxIter": 9,
+        "GBTClassifier.maxDepth": 4,
+        "GBTClassifier.stepSize": 0.2
+      }
+    ],
+    "tuned_estimator_parameter_map": {
+      "GBTClassifier.cacheNodeIds": false,
+      "GBTClassifier.checkpointInterval": 10,
+      "GBTClassifier.featureSubsetStrategy": "all",
+      "GBTClassifier.featuresCol": "IndependentFeatures",
+      "GBTClassifier.impurity": "variance",
+      "GBTClassifier.labelCol": "Churned",
+      "GBTClassifier.leafCol": "",
+      "GBTClassifier.lossType": "logistic",
+      "GBTClassifier.maxBins": 32,
+      "GBTClassifier.maxDepth": 5,
+      "GBTClassifier.maxIter": 20,
+      "GBTClassifier.maxMemoryInMB": 256,
+      "GBTClassifier.minInfoGain": 0.0,
+      "GBTClassifier.minInstancesPerNode": 1,
+      "GBTClassifier.minWeightFractionPerNode": 0.0,
+      "GBTClassifier.predictionCol": "prediction",
+      "GBTClassifier.probabilityCol": "probability",
+      "GBTClassifier.rawPredictionCol": "rawPrediction",
+      "GBTClassifier.seed": 529748834532901298,
+      "GBTClassifier.stepSize": 0.1,
+      "GBTClassifier.subsamplingRate": 1.0,
+      "GBTClassifier.validationTol": 0.01
+    }
+  }
+}

@@ -1,0 +1,19 @@
+artifact_path: Churn Predictor
+flavors:
+  python_function:
+    data: sparkml
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.spark
+    python_version: 3.10.13
+  spark:
+    code: null
+    model_class: pyspark.ml.pipeline.PipelineModel
+    model_data: sparkml
+    pyspark_version: 3.5.1
+mlflow_version: 2.13.1
+model_size_bytes: 12271
+model_uuid: 5de64177e7a1400ea3b487d4eeeb1149
+run_id: f9af5ed34ea14f219c049e88469694c5
+utc_time_created: '2024-06-04 00:56:15.033669'

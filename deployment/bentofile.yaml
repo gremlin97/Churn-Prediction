@@ -1,0 +1,19 @@
+service: 'service:Churner'
+description:
+  ## Churn Prediction for Banks - Deployment
+labels:
+  owner: kunal
+  stage: staging
+  project: Churn-Prediction
+include:
+  - '*.py'
+  - './data/**'
+  - './models/**'
+  - './pipeline/**'
+  - './mlflow.db'
+python:
+  packages:
+    - 'mlflow==2.13.1'
+    - 'numpy==1.26.4'
+    - 'pyspark==3.5.1'
+    - 'scipy==1.13.0'

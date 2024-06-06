@@ -6,7 +6,7 @@ import pyspark
 from pyspark.sql import SparkSession
 from pyspark.ml import PipelineModel
 
-sys.path.append('../')
+# sys.path.append('../')
 
 from preprocess import preprocess_df, preprocess_df_inference
 
